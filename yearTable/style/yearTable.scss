@@ -1,0 +1,158 @@
+.sb {
+  &__yearTable {
+    * {
+      box-sizing: border-box;
+    }
+
+    .yearTable {
+      &__box {
+        width: 1000px;
+        margin: 0 auto;
+        margin-top: 100px;
+      }
+
+      &__table {
+        display: flex;
+        border: 1px solid black;
+
+        .table {
+          $rowHeight: 50px;
+
+          &__col {
+            flex: 1;
+            // border: 1px solid gray;
+          }
+
+          &__row {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: $rowHeight;
+            border: 1px solid gray;
+          }
+
+          &__name {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: $rowHeight;
+            z-index: 1;
+            left: 0;
+            width: 100%;
+            height: calc(100% - #{$rowHeight * 2});
+            background: rgb(91, 91, 255);
+
+            &__text {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              height: $rowHeight;
+              width: 100%;
+              background: rgb(91, 91, 255);
+
+              &:before {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                z-index: -1;
+                background: white;
+              }
+            }
+
+            &:before,
+            &:after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              margin-left: -2px;
+              width: 4px;
+              height: 4px;
+              z-index: -1;
+            }
+
+            &:before {
+              top: 1px;
+              border-top: 1px solid white;
+              border-right: 1px solid white;
+              transform: rotate(-45deg);
+            }
+
+            &:after {
+              bottom: 1px;
+              border-bottom: 1px solid white;
+              border-right: 1px solid white;
+              transform: rotate(45deg);
+            }
+
+            &.top {
+              align-items: flex-start;
+              top: 0;
+              height: calc(100% - #{$rowHeight});
+            }
+            &.bottom {
+              align-items: flex-end;
+              top: none;
+              bottom: 0;
+              height: calc(100% - #{$rowHeight});
+            }
+          }
+
+          &__data {
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+
+            &__row {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: $rowHeight;
+              background: rgb(91, 91, 255);
+              color: white;
+              text-align: center;
+            }
+
+            &:hover {
+              .table__hover {
+                opacity: 1;
+                bottom: calc(100% + 16px);
+              }
+            }
+          }
+
+          &__hover {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            background: black;
+            color: white;
+            font-size: 13px;
+            white-space: nowrap;
+            transition: all 0.5s ease;
+            opacity: 0;
+
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              width: 10px;
+              height: 10px;
+              background: black;
+              left: 50%;
+              transform: translateX(-50%) rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

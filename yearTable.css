@@ -1,0 +1,128 @@
+.sb__yearTable * {
+  box-sizing: border-box;
+}
+.sb__yearTable .yearTable__box {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.sb__yearTable .yearTable__table {
+  display: flex;
+  border: 1px solid black;
+}
+.sb__yearTable .yearTable__table .table__col {
+  flex: 1;
+}
+.sb__yearTable .yearTable__table .table__row {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 1px solid gray;
+}
+.sb__yearTable .yearTable__table .table__name {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  background: rgb(91, 91, 255);
+}
+.sb__yearTable .yearTable__table .table__name__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 50px;
+  width: 100%;
+  background: rgb(91, 91, 255);
+}
+.sb__yearTable .yearTable__table .table__name__text:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  background: white;
+}
+.sb__yearTable .yearTable__table .table__name:before, .sb__yearTable .yearTable__table .table__name:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  height: 4px;
+  z-index: -1;
+}
+.sb__yearTable .yearTable__table .table__name:before {
+  top: 1px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(-45deg);
+}
+.sb__yearTable .yearTable__table .table__name:after {
+  bottom: 1px;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(45deg);
+}
+.sb__yearTable .yearTable__table .table__name.top {
+  align-items: flex-start;
+  top: 0;
+  height: calc(100% - 50px);
+}
+.sb__yearTable .yearTable__table .table__name.bottom {
+  align-items: flex-end;
+  top: none;
+  bottom: 0;
+  height: calc(100% - 50px);
+}
+.sb__yearTable .yearTable__table .table__data {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.sb__yearTable .yearTable__table .table__data__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: rgb(91, 91, 255);
+  color: white;
+  text-align: center;
+}
+.sb__yearTable .yearTable__table .table__data:hover .table__hover {
+  opacity: 1;
+  bottom: calc(100% + 16px);
+}
+.sb__yearTable .yearTable__table .table__hover {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background: black;
+  color: white;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.sb__yearTable .yearTable__table .table__hover:before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 10px;
+  height: 10px;
+  background: black;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}/*# sourceMappingURL=yearTable.css.map */
