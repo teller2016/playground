@@ -1,0 +1,21 @@
+.title {
+}
+
+.section {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.particle0 {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("./img/particle_0.png") no-repeat center center / 100% auto;
+  transform: rotateZ(0);
+}
+.particle1 {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("./img/particle_1.png") no-repeat center center / 100% auto;
+}
